@@ -23,7 +23,6 @@ def raiz_quadrada(a):
 def fatorial(a):
     return math.factorial(int(a))
 
-# Dicionário com operações
 switch = {
     1: "Soma",
     2: "Subtração",
@@ -35,7 +34,6 @@ switch = {
 }
 
 def calcular(opcao, resultado_anterior=None):
-    # Dicionário com as funções para cada operação
     operacoes_binarias = {
         1: soma,
         2: subtrai,
@@ -66,18 +64,16 @@ def calcular(opcao, resultado_anterior=None):
                 num = int(input("Digite o número para calcular o fatorial: "))
                 return fatorial(num)
 
-# Início do programa
 nome = input("Digite seu nome: ")
 print(f"\nOlá, {nome}! Bem-vindo à Calculadora!")
 
 resultado_atual = None
 
-# Mostrar as opções
+
 print("\nDigite qual operação você deseja realizar:")
 for key in switch:
     print(f"{key} - {switch[key]}")
 
-# Loop até escolher uma opção válida
 while True:
     try:
         opcao = int(input("\nDigite o número da operação: "))
@@ -94,7 +90,6 @@ print(f"\nResultado: {resultado_atual}")
 
 while True:  # Loop principal do programa
     
-    # Se resultado_atual for None, pede nova operação normalmente
     if resultado_atual is None:
         print("\nDigite qual operação você deseja realizar:")
         for key in switch:
@@ -113,7 +108,6 @@ while True:  # Loop principal do programa
         resultado_atual = calcular(opcao, resultado_atual)
         print(f"\nResultado: {resultado_atual}")
 
-    # Após a operação, mostrar o menu de opções para continuar, zerar ou sair
     print("\nO que você deseja fazer agora?")
     print("1 - Continuar usando o resultado atual")
     print("2 - Zerar e começar nova operação")
@@ -131,12 +125,11 @@ while True:  # Loop principal do programa
         else:
             print("Opção inválida! Tente novamente.")
     elif escolha == "2":
-        resultado_atual = None  # Zera o valor anterior
+        resultado_atual = None
         print("\nVocê escolheu realizar uma nova operação.")
-        # Aqui ele vai voltar para o começo do loop principal e pedir operação de novo
     elif escolha == "3":
         print("\nObrigado por usar a calculadora! Até a próxima.")
-        break  # Sai do loop principal e termina o programa
+        break
     else:
         print("Escolha inválida! Tente novamente.")
         continue
