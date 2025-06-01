@@ -122,7 +122,9 @@ while True:  # Loop principal do programa
     escolha = input("\nDigite sua escolha (1/2/3): ")
     if escolha == "1":
         print("\nVocê escolheu continuar usando o resultado atual.")
-        opcao = int(input("\nDigite o número da nova operação: 1 = soma, 2 = subtração, 3 = multiplicação, 4 = divisão, 5 = potência, 6 = raiz quadrada, 7 = fatorial: "))
+        for key in switch:
+            print(f"{key} - {switch[key]}")
+        opcao = int(input("\nDigite o número da nova operação: "))
         if opcao in switch:
             resultado_atual = calcular(opcao, resultado_atual)
             print(f"\nResultado: {resultado_atual}")
