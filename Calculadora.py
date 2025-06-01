@@ -56,6 +56,7 @@ def calcular(opcao, resultado_anterior=None):
         if resultado_anterior is not None:
             num = resultado_anterior
             print(f"\nUsando resultado anterior: {num}")
+            return raiz_quadrada(num) if opcao == 6 else fatorial(num)
         else:
             if opcao == 6:
                 num = float(input("Digite o número para calcular a raiz quadrada: "))
